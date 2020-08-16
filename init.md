@@ -32,10 +32,73 @@ yeoman 的重点集中在：
 
 [点击这里获取源码](##)
 
-## 使用 `ttys` 搭建一个 console 工具，达到用户交互的目的
+## 命令行搭建类似 yeoman 的东西
 
-我们在使用三大框架时，经常能看到 bash 中有让你选择的情况。其实，`ttys` 这个包也能实现这个功能。
-[点击这里获取源码](##)
+我们在使用三大框架时，经常能看到 bash 中有让你选择的情况。其实，用命令行也能实现这个功能。
+
+### 命令行中显示问题
+
+- 使用 [`readline`](https://nodejs.org/api/readline.html#readline_rl_question_query_callback)
+
+  ```javascript
+  const readline = require("readline");
+
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  async function ask(question) {
+    return new Promise((resolve, reject) => {
+      rl.question(question, (answer) => {
+        resolve(answer);
+      });
+    });
+  }
+
+  void (async function () {
+    console.log(await ask("your project name?"));
+  })();
+  ```
+
+- 使用 `stdout.write` 直接输出
+
+### 命令行中移动光标
+
+使用 `stdout.write` 来移动光标: [Cursor Movement](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x361.html)
+
+```javascript
+var tty = require("tty");
+var ttys = require("ttys");
+
+var stdin = ttys.stdin;
+var stdout = ttys.stdout;
+
+stdout.write("Hello1 World!\n");
+stdout.write("\033[1A"); // 光标向上移动一行
+stdout.write("winter");
+```
+
+## 命令行中进行选择
+
+打印输入的字符：
+
+```javascript
+var stdin = process.stdin;
+stdin.setRawMode(true);
+stdin.resume();
+stdin.setEncoding("utf8");
+
+stdin.on("data", function (key) {
+  if (key === "\u0003") {
+    process.exit();
+  }
+
+  process.stdout.write(key.toString().charCodeAt(0).toString());
+});
+```
+
+[点击这里获取源码](##)。
 
 ## 在代码中使用 `npm`，生成新的依赖
 
