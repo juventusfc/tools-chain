@@ -30,7 +30,7 @@ yeoman 的重点集中在：
 1. 执行`npm install -g yo`，全局安装 yeoman；
 2. 执行 `yo frank`，相当于使用 frank 这个脚手架生成项目。类似于 `create-react-app`。
 
-[点击这里获取源码](##)
+[点击这里获取源码](https://github.com/juventusfc/tools-chain-generator-frank)
 
 ## 命令行搭建类似 yeoman 的东西
 
@@ -98,7 +98,7 @@ stdin.on("data", function (key) {
 });
 ```
 
-[点击这里获取源码](##)。
+[点击这里获取源码](https://github.com/juventusfc/tools-chain-console-tookit)。
 
 ## 在代码中使用 `npm`，安装新的依赖
 
