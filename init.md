@@ -79,7 +79,7 @@ stdout.write("\033[1A"); // 光标向上移动一行
 stdout.write("winter");
 ```
 
-## 命令行中进行选择
+### 命令行中进行选择
 
 打印输入的字符：
 
@@ -100,6 +100,33 @@ stdin.on("data", function (key) {
 
 [点击这里获取源码](##)。
 
-## 在代码中使用 `npm`，生成新的依赖
+## 在代码中使用 `npm`，安装新的依赖
 
-[点击这里获取源码](##)
+```javascript
+/**
+ * 代码中实现安装 webpack 包
+ * */
+const npm = require("npm");
+
+const config = {
+  name: "npm-demo",
+  version: "1.0.0",
+  description: "",
+  main: "index.js",
+  scripts: {
+    test: 'echo "Error: no test specified" && exit 1',
+  },
+  keywords: [],
+  author: "",
+  license: "ISC",
+  dependencies: {
+    npm: "^6.14.7",
+  },
+};
+
+npm.load(config, (err) => {
+  npm.install("webpack", (err) => {
+    console.log(err);
+  });
+});
+```
