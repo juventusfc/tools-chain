@@ -14,31 +14,45 @@
 - dev 阶段的工具
 
   - Server
+
     - build
+
       - `webpack`
       - `babel`
       - `vue-compiler-sfc`
       - `jsx`
       - `postcss`
+
     - watch
+
       - `fsevent` 不支持 window
       - `chokidar` 支持 windows
+
     - mock
     - http
+
       - `ws`
         - `webpack-dev-server`
       - `wireshark`
+
   - Client
+
     - debugger
+
       - `vscode debugger`
       - `chrome devtool`
+
     - `sourcemap`
 
 - test 阶段的工具
+
   - jest
   - mocha
+
     - [how to config mocha and nyc](./how-to-config-mocha-and-nyc.md)
+
 - publish 阶段的工具
+
   - lint
   - jenkins
 
