@@ -26,6 +26,7 @@
     - mock
     - http
       - `ws`
+        - `webpack-dev-server`
       - `wireshark`
   - Client
     - debugger
@@ -41,6 +42,10 @@
   - lint
   - jenkins
 
-## 工具链整合
+一般的，我们会在初始化阶段就将各个阶段的工具集成进工具链中。我在 github 上传了一个使用 yeoman 搭建的 toytool 脚手架。[点击这里获取源码](https://github.com/juventusfc/tools-chain-generator-toytool)。
 
-## 参考资料
+yeoman 中制作脚手架的步骤主要有：
+
+1. 生成 `package.json`
+2. 安装依赖
+3. 复制模板
