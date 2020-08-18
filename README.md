@@ -51,7 +51,7 @@
 
     - [how to config mocha and nyc](./how-to-config-mocha-and-nyc.md)
 
-- publish 阶段的工具
+- [publish 阶段的工具](./publish.md)
 
   - lint
   - jenkins
