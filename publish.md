@@ -3,9 +3,8 @@
 ## 搭建 Ubuntu 中的 Node.js 环境
 
 1. 安装 `virtual box` 和 `Ubuntu`
-2. 执行 `sudo apt install nodejs`
-
-安装步骤可参考 [Ubuntu18.04 Install Node.js Npm](https://www.jianshu.com/p/f3dad64d896a)
+2. 安装 `nvm`
+3. 安装 `Node.js`
 
 ## 搭建 `server`
 
@@ -25,8 +24,6 @@
 
 1. 对用户权限进行认证
 2. 响应 `publish-tool` 的请求，更改 `server` 中的静态文件
-
-https://nodejs.org/docs/latest-v13.x/api/fs.html
 
 ## 搭建 `publish-tool`
 
