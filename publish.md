@@ -14,6 +14,8 @@
 
 很多时候我们都会将所有文件放到一个文件夹下，然后通过 `archiver` 包，将该文件夹下所有文件进行压缩传给 `server`。
 
+[点击这里获取 publish-tool 源码](https://github.com/juventusfc/tools-chain-publish-tool)
+
 ### 搭建 `publish-server` 和 `publish-server-vanilla`
 
 `publish-server` 主要实现两个功能：
@@ -27,11 +29,17 @@
 
 由于从 `publish-tool` 传过来的是压缩包，所以在这里要进行解压缩。然后，以 pipe 的方式将流传给 `server`。
 
+[点击这里获取 publish-server 源码](https://github.com/juventusfc/tools-chain-publish-server)
+
+[点击这里获取 publish-server-vanilla 源码](https://github.com/juventusfc/tools-chain-publish-server-vanilla)
+
 ### 搭建 `server`
 
 `server` 作为静态服务器，接受来自 `publish-server` 的请求，将静态文件更改，从而让用户访问最新的资源。
 
 执行 `npx express-generator` 产生模板代码。默认的端口号为 3000。有时候为了省力，可以直接将静态文件放在 public 文件夹下。
+
+[点击这里获取 server 源码](https://github.com/juventusfc/tools-chain-server)
 
 ### 架构
 
